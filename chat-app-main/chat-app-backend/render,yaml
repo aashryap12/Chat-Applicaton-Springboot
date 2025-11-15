@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chat-backend
+    env: java
+    plan: free
+    buildCommand: "cd chat-app-main/chat-app-backend && ./mvnw clean package -DskipTests"
+    startCommand: "cd chat-app-main/chat-app-backend && java -jar target/*.jar"
+    envVars:
+      JAVA_VERSION: 21
